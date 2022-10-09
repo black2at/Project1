@@ -1,0 +1,1 @@
+﻿GCI C:\ -recurse | where-object {$_.length -gt 262144000} | Sort-Object length | select -first 50 name, @{Name="Size in MB";Expression={$_.Length / 1MB}}
